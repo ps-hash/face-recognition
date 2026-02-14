@@ -73,11 +73,9 @@ A comprehensive Face Recognition Attendance System built with Python, OpenCV, an
 .
 ## Screenshots
 
-### Face Detection
-![Face Detection](screenshots/detect.jfif)
+![Face Detection](screenshots/detect.png)
 
-### Face Recognition
-![Face Recognition](screenshots/recognized.jfif)
+![Face Recognition](screenshots/recognized.png)
 
-### Attendance Marked
-![Attendance](screenshots/attendance.jfif)
+![Attendance](screenshots/attendance.png)
+
