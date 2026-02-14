@@ -1,4 +1,4 @@
-# Face Attendance System
+# Smart Attendacne using Facial Recognition System
 
 A comprehensive Face Recognition Attendance System built with Python, OpenCV, and Tkinter. This application allows for real-time face detection, registration, and attendance tracking with an intuitive GUI.
 
