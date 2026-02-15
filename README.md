@@ -71,7 +71,6 @@ A comprehensive Face Recognition Attendance System built with Python, OpenCV, an
 -   **Pillow (PIL)**: Python Imaging Library for image handling in the GUI.
 -   **NumPy**: Numerical computing library for array operations.
 
-. VIDEO TUTORIAL https://www.youtube.com/watch?v=BT4WzyT2g8k
 ## Screenshots
 
 ![Face Detection](screenshots/detect.png)
