@@ -79,3 +79,6 @@ A comprehensive Face Recognition Attendance System built with Python, OpenCV, an
 
 ![Attendance](screenshots/attendance.png)
 
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
