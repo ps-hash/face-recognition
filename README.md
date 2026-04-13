@@ -1,84 +1,83 @@
-# Smart Attendance using Facial Recognition System
+# FaceTrack AI: Smart Attendance System
 
-A comprehensive Face Recognition Attendance System built with Python, OpenCV, and Tkinter. This application allows for real-time face detection, registration, and attendance tracking with an intuitive GUI.
+A modern, full-stack web application for automated facial recognition and attendance tracking. The system utilizes a robust Python OpenCV backend wrapped in a Flask REST API, paired with a beautiful, fully responsive React & TailwindCSS dashboard.
 
-## Features
+## 🌟 Key Features
 
--   **Real-time Face Recognition**: Detects and recognizes faces using webcam feed.
--   **User Registration**: Easily add new users by capturing their face directly from the application.
--   **Attendance Tracking**: Automatically marks attendance with date and time when a registered face is recognized.
--   **CSV Export**: Attendance records are saved in `attendance.csv` for easy export and viewing.
--   **Data Management**:
-    -   Delete individual attendance records.
-    -   Reset all facial data and attendance records with a single click.
--   **Desktop Shortcut**: Includes a script to create a convenient desktop shortcut.
+- **Real-Time Video Streaming**: Low-latency MJPEG video feed streamed directly from Python to the React UI.
+- **Dynamic Face Recognition**: OpenCV Haar Cascades paired with custom similarity-based face matching algorithms.
+- **In-Browser Employee Registration**: Capture and register new employee faces directly from the web dashboard.
+- **Live Analytical Dashboard**: Instantly tracks attendance records via an embedded CSV database and visualizes daily presence percentages.
+- **One-Click Native Launcher**: Completely skips the terminal using `Start FaceTrack.bat` to boot the full application suite seamlessly.
 
-## Prerequisites
+## 🛠️ Technology Stack
 
--   Python 3.x
--   Webcam
+- **Backend**: Python 3.8+, Flask, OpenCV, NumPy
+- **Frontend**: React 18, Vite, TailwindCSS v4, Recharts, Lucide Icons
+- **Database**: Local File System (`known faces/`) & CSV Logging (`attendance.csv`)
 
-## Installation
+## 🚀 Installation & Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/ps-hash/face-recognition.git
-    cd face-recognition
-    ```
+1. **Clone the repository:**
+```bash
+git clone https://github.com/udit-jhanjhariya/Smart-Attendance-System.git
+cd Smart-Attendance-System
+```
 
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. **Install Backend Dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-## Usage
+3. **Install Frontend Dependencies:**
+Ensure you have [Node.js](https://nodejs.org) installed on your system.
+```bash
+cd ui
+npm install
+```
 
-1.  **Run the application:**
-    ```bash
-    python main.py
-    ```
-    *Alternatively, if you created the desktop shortcut, just double-click "FaceAttendance" on your desktop.*
+## 💻 Usage
 
-2.  **Register a User:**
-    -   Click **"Start Camera"**.
-    -   Click **"Add Face"**.
-    -   Follow the prompt to enter the user's name.
-    -   The system will capture and save the face data.
+### The Easiest Way (Windows)
+Simply double click the **`Start FaceTrack.bat`** file in the root of the project! 
+This batch script autonomously launches the Python recognition engine, compiles the Node dashboard, and spawns the UI in a native-looking App Container.
 
-3.  **Mark Attendance:**
-    -   Start the camera.
-    -   Look at the camera.
-    -   When recognized, the system will display the name and mark attendance in the list.
+### The Manual Developer Way
+If you wish to modify code and develop manually:
 
-4.  **Manage Records:**
-    -   Select a record in the list and click **"Delete Selected"** to remove it.
-    -   Click **"Reset All Data"** to clear all known faces and attendance logs (Warning: cannot be undone).
+**1. Start the Python API Server:**
+```bash
+python app.py
+```
+*(The backend will run on `http://127.0.0.1:5000`)*
 
-## Project Structure
+**2. Start the React UI Server:**
+Open a new terminal window:
+```bash
+cd ui
+npm run dev
+```
+*(Navigate to `http://localhost:5173` in your web browser)*
 
--   `main.py`: Main entry point and GUI implementation.
--   `utils/face_utils.py`: Core logic for face detection, recognition, and attendance management.
--   `requirements.txt`: List of Python dependencies.
--   `known faces/`: Directory storing registered face images.
--   `attendance.csv`: Log file for attendance records.
--   `create_shortcut.ps1`: PowerShell script to create a desktop shortcut.
+## 📁 Architecture Structure
 
-## Technologies Used
+```text
+smart-attendance-system/
+│
+├── Start FaceTrack.bat       # Supervised one-click launcher
+├── app.py                    # Flask API & MJPEG camera stream logic
+├── utils/
+│   └── face_utils.py         # OpenCV detector & recognizer implementation
+├── ui/                       # React + Vite Frontend Workspace
+│   ├── index.html            # Vite entry point
+│   ├── src/                  # React Components (Dashboard, FaceScanner, etc)
+│   └── styles/               # Tailwind definitions and CSS variables
+├── known faces/              # Encoded JPG/PNG facial databases
+├── attendance.csv            # Parsed daily attendance logs
+└── requirements.txt          # Python dependencies
+```
 
--   **Python**: Core programming language.
--   **OpenCV**: Computer vision library for face detection and image processing.
--   **Tkinter**: Standard GUI framework for Python.
--   **Pillow (PIL)**: Python Imaging Library for image handling in the GUI.
--   **NumPy**: Numerical computing library for array operations.
-
-## Screenshots
-
-![Face Detection](screenshots/detect.png)
-
-![Face Recognition](screenshots/recognized.png)
-
-![Attendance](screenshots/attendance.png)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+## ⚙️ Configuration
+- The default confidence recognition threshold is `0.65` in `FaceRecognizer`.
+- Bounding-box detection frame updates asynchronously for peak performance.
+- The React Development proxy forwards all `/api` calls safely through port `5000` avoiding CORS issues.

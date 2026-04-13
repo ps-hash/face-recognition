@@ -1,6 +1,5 @@
-flask
-face-recognition
-gunicorn
-opencv-python
-numpy
-pillow
+opencv-python>=4.8.0
+numpy>=1.24.3
+pillow>=10.0.0
+Flask>=3.0.0
+Flask-Cors>=4.0.0
